@@ -176,7 +176,7 @@ function newXDR() {
   buildTreeFromObject(object, tree[0], type);
   $('#tree').treeview({
     data: tree,
-    levels: 4,
+    levels: 8,
     showTags: true,
     highlightSelected: false
   });
