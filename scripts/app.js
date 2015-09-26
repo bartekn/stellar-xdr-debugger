@@ -176,7 +176,7 @@ function newXDR() {
   buildTreeFromObject(object, tree[0], type);
   $('#tree').treeview({
     data: tree,
-    levels: 8,
+    levels: 5,
     showTags: true,
     highlightSelected: false
   });
@@ -250,6 +250,10 @@ function getValue(object, name) {
     var address = StellarSdk.encodeCheck("accountId", object);
     var short = address.substr(0, 10);
     return '<a href="https://horizon-testnet.stellar.org/accounts/'+address+'" title="'+address+'" target="_blank">'+short+'</a>';
+  }
+
+  if (name === 'assetCode' || name === 'assetCode4' || name === 'assetCode12') {
+    return object.toString();
   }
 
   var value = object;
