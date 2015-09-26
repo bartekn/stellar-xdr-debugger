@@ -1,0 +1,9 @@
+{
+  "name": "stellar-xdr-debugger",
+  "description": "Stellar XDR debugger",
+  "dependencies": {
+    "bootstrap-treeview": "1.2.0",
+    "lodash": "3.10.1",
+    "stellar-sdk": "~0.2.7"
+  }
+}
