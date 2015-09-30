@@ -188,11 +188,9 @@ function buildTreeFromObject(object, anchor, name) {
 
   if (_.isArray(object)) {
     parseArray(anchor, object);
-  }
-  else if (!hasChildren(object)) {
+  } else if (!hasChildren(object)) {
     anchor.text += ' = '+getValue(object, name);
-  }
-  else if (object.switch) {
+  } else if (object.switch) {
     parseArm(anchor, object)
   } else {
     parseNormal(anchor, object)
@@ -225,10 +223,14 @@ function parseNormal(anchor, object) {
 }
 
 function hasChildren(object) {
+  // string
   if (_.isString(object)) {
     return false;
   }
-
+  // node buffer
+  if (object && object._isBuffer) {
+    return false;
+  }
   var functions = _(object).functions();
   if (functions.value().length == 0) {
     return false;
@@ -237,11 +239,6 @@ function hasChildren(object) {
   if (functions.include('getLowBits') && functions.include('getHighBits')) {
     return false;
   }
-  // node buffer
-  if (object._isBuffer) {
-    return false;
-  }
-
   return true;
 }
 
