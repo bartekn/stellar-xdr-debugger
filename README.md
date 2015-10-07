@@ -1,11 +1,3 @@
-# stellar-xdr-debugger
+# Depreciated!
 
-A tool to debug Stellar XDR.
-
-## Developing
-
-```
-npm install
-bower install
-gulp
-```
+Moved to [https://github.com/stellar/xdr-viewer](https://github.com/stellar/xdr-viewer).
